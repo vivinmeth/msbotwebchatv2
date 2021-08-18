@@ -6,7 +6,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>React APP!</h1>
+      <h1>React APP! Dockerized</h1>
     </div>
   );
 }
