@@ -1,0 +1,28 @@
+.float{
+    &__right{
+        float: right;
+    }
+
+    &__left{
+        float: left;
+    }
+}
+
+.padding{
+    &-right{
+        &-md{
+            padding-right: 4rem;
+        }
+        &-sm{
+            padding-right: 2rem;
+        }
+    }
+    &-left{
+        &-md{
+            padding-left: 4rem;
+        }
+        &-sm{
+            padding-left: 2rem;
+        }
+    }
+}

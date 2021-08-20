@@ -1,0 +1,21 @@
+*,*::before, *::after{
+  margin:0;
+  padding: 0;
+  box-sizing: inherit;
+} //initial reset
+
+//html{
+//  font-size: 100%; // 10px / 16px (browser default is 16px)
+//
+//  @media only screen and (max-width: 1370px) {
+//    font-size: 62.5%;
+//  }
+//}
+
+body{
+  box-sizing: border-box;
+  font-family: 'Lato', sans-serif;
+  // background-color: var(--color-white-off-1);
+}
+
+

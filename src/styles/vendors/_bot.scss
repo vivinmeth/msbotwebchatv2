@@ -1,0 +1,206 @@
+.empwc{
+  &__card-shadow {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+
+  & #webchat{
+    background: white;
+    & .ac-actionSet button {
+      border: 1px solid var(--color-primary-light);
+      color: var(--color-primary-light);
+      background-color: #FFFFFF;
+      border-radius: 5px;
+      cursor: pointer !important;
+      //font-size: 0.8rem;
+    }
+
+    & .ac-image {
+      max-width: none;
+    }
+
+    & .ac-actionSet button div {
+      /*        font-size:14px !important;*/
+    }
+
+    & .ac-actionSet button.expandable {
+      border-color: var(--color-primary-medium) !important;
+      color: var(--color-primary-medium) !important;
+      background-color: #EFEFEF !important;
+      justify-content: flex-start !important;
+    }
+
+    & .ac-actionSet button.expandable div {
+      text-overflow: unset !important;
+      white-space: break-spaces !important;
+      text-align: left !important;
+      width: 93%;
+    }
+
+    & .ac-actionSet button.expandable:after {
+      content: "\25bc";
+      position: absolute;
+      right: 20px;
+    }
+
+    & .ac-actionSet button.expanded:after {
+      content: "\25b2";
+      position: absolute;
+      right: 20px;
+    }
+
+    & .ac-adaptiveCard .ac-textBlock p {
+      max-height: 200px;
+      overflow: auto;
+    }
+
+    & .ac-actionSet button:hover {
+      background-color: var(--color-primary-medium);
+      color: #FFFFFF;
+      border-color: var(--color-primary-medium) ;
+    }
+
+    & .ac-actionSet button:focus {
+      background-color: #FFFFFF;
+      color: var(--color-primary);
+      border-color: var(--color-primary) ;
+      border-style: dashed;
+
+    }
+    & .ac-actionSet button:active {
+      background-color: var(--color-primary);
+      color: #ffffff;
+      border-color: var(--color-primary) ;
+
+
+    }
+
+    /* the bellow fix is for vertical buttons */
+    & .ac-container.ac-adaptiveCard .ac-actionSet {
+      flex-wrap: wrap;
+    }
+
+    & .ac-container.ac-adaptiveCard .ac-actionSet >  button{
+      margin: 4px 0;
+      margin-right: 4px;
+    }
+
+    & .ac-container.ac-adaptiveCard .ac-actionSet >  button > div{
+      white-space: break-spaces !important;
+    }
+
+    & .ac-container.ac-adaptiveCard .ac-actionSet > div{
+      width: 0 !important;
+    }
+    /************************************/
+    & .ac-actionSet button.expandable:hover {
+      background-color: rgba(0, 0, 0, 0.1) !important;
+    }
+
+    & .slider {
+      background: rgba(0, 0, 0, 0) !important;
+    }
+
+    & .slider .button {
+      background-color: var(--color-primary);
+      color: #FFFFFF;
+      border-radius: 0px;
+      padding: 0px !important;
+    }
+
+    & .webchat__bubble__content {
+      /*border:0px !important;*/
+    }
+
+    & .slider:focus,
+    & .slider .button:focus,
+    button:focus {
+      outline: none !important;
+    }
+
+    #msg-toggle {
+      position: fixed;
+      top: 88vh;
+      right: 2%;
+      z-index: 1005;
+      cursor: pointer;
+    }
+
+    .card-shadow {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    & ul {
+      margin-inline-start: 0px !important;
+    }
+
+    & .ac-textBlock{
+      //font-size: 0.8rem !important;
+    }
+
+    & .ac-textInput,
+    & .ac-multichoiceInput,
+    & .ac-choiceSetInput-compact,
+    & .ac-dateInput,
+    & .ac-timeInput,
+    & .ac-multiline {
+      border: 1px solid #EFEFEF;
+      font-weight: normal;
+      //font-size: 0.8rem;
+    }
+
+    & .webchat__imageAvatar__image {
+      background-color: white;
+    }
+
+    & input {
+      font-family: 'Lato', sans-serif;
+      font-weight: normal;
+    }
+
+    /* .css-300bfs is the timestamp class, use only if absolutely necessaary*/
+    & .css-30bfs {
+      font-family: 'Lato', sans-serif;
+    }
+
+    //& .webchat__carousel-layout__attachment .webchat__bubble__content .ac-adaptiveCard{
+    //  /* width: 25vw; */
+    //  min-height: 455px;
+    //}
+    //& .webchat__carousel-filmstrip__content .webchat__bubble__content .ac-adaptiveCard{
+    //  min-height: 455px;
+    //  /* padding-right: 30px !important; */
+    //}
+    & .webchat__bubble:not(.webchat__bubble--from-user) .webchat__bubble__content {}
+
+    & .webchat__bubble .webchat__bubble__content {
+      // width: 25vw !important;
+      //font-size: 0.8rem;
+    }
+
+    & .webchat__carousel-filmstrip__content .webchat__bubble__content .ac-adaptiveCard .ac-textBlock,
+    & .webchat__carousel-filmstrip__content .webchat__bubble__content .ac-adaptiveCard .ac-textBlock p
+    {
+      //font-size: 0.8rem;
+      /* max-height: 126px;
+      overflow-y: auto !important; */
+    }
+
+    & .webchat__carousel-filmstrip .webchat__carousel-filmstrip__attachment {
+      min-width: 20rem;
+      width: 25vw;
+      max-width: 38rem;
+
+      @include respond(small-phone){
+        min-width: 16rem;
+        max-width: 19rem;
+      }
+      //@include respond(small-phone-keys){
+      //  max-height: 16rem;
+      //}
+    }
+
+    & .webchat__send-icon {
+      position: relative;
+    }
+  }
+}

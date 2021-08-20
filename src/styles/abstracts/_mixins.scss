@@ -1,0 +1,9 @@
+@import "mixins/media_query_manager";
+
+@mixin clearfix{
+    &::after{
+      content: "";
+      clear: both;
+      display: table;
+    }
+  }

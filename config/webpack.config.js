@@ -63,6 +63,8 @@ const cssRegex = /\.css$/;
 const cssModuleRegex = /\.module\.css$/;
 const sassRegex = /\.(scss|sass)$/;
 const sassModuleRegex = /\.module\.(scss|sass)$/;
+const stylesScopedRegex = /\.component\.(sc|c|sa)ss$/;
+
 
 const hasJsxRuntime = (() => {
   if (process.env.DISABLE_NEW_JSX_TRANSFORM === 'true') {
@@ -460,6 +462,7 @@ module.exports = function (webpackEnv) {
                 inputSourceMap: shouldUseSourceMap,
               },
             },
+
             // "postcss" loader applies autoprefixer to our CSS.
             // "css" loader resolves paths in CSS and adds assets as dependencies.
             // "style" loader turns CSS into JS modules that inject <style> tags.
@@ -496,6 +499,30 @@ module.exports = function (webpackEnv) {
                 },
               }),
             },
+
+            // this is scoped css loader which load *.component.scss files as scoped css.
+            // {
+            //   test: stylesScopedRegex,
+            //   use: [
+            //     {
+            //       loader: 'style-loader',
+            //     },
+            //     {
+            //       loader: 'css-loader',
+            //       options: {
+            //         sourceMap: true,
+            //         importLoaders: 2,
+            //       },
+            //     },
+            //     // You have to put it after `css-loader` and before any `pre-precessing loader`
+            //     { loader: 'scoped-css-loader' },
+            //     {
+            //       loader: 'sass-loader',
+            //     },
+            //   ],
+            // },
+
+
             // Opt-in support for SASS (using .scss or .sass extensions).
             // By default we support SASS Modules with the
             // extensions .module.scss or .module.sass
@@ -534,6 +561,12 @@ module.exports = function (webpackEnv) {
                 'sass-loader'
               ),
             },
+            // Support for yaml files (mainly used for configuration files)
+            {
+              test: /.ya?ml$/,
+              loader: "yaml-loader",
+              type: "json"
+            },
             // "file" loader makes sure those assets get served by WebpackDevServer.
             // When you `import` an asset, you get its (virtual) filename.
             // In production, they would get copied to the `build` folder.
@@ -545,7 +578,7 @@ module.exports = function (webpackEnv) {
               // its runtime that would otherwise be processed through "file" loader.
               // Also exclude `html` and `json` extensions so they get processed
               // by webpacks internal loaders.
-              exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/],
+              exclude: [/\.(js|mjs|jsx|ts|tsx)$/, /\.html$/, /\.json$/, /.ya?ml$/],
               options: {
                 name: 'static/media/[name].[hash:8].[ext]',
               },
