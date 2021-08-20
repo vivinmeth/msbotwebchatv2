@@ -1,21 +1,14 @@
-import FullReactWebChat, {createDirectLine} from "botframework-webchat";
-import React, {useMemo} from "react";
+import FullReactWebChat from "botframework-webchat";
+import React from "react";
 
 
-export const CoreComponent = React.memo((props: {secret: string}) => {
-    if (!props.secret){
-        // throw new Error('Invalid DirectLine Secret!');
-    }
-
-    const directLine = useMemo(() => createDirectLine({
-        secret: props.secret
-    }), [props.secret]);
+export const CoreComponent = React.memo((props: {directLine: any}) => {
 
 
     return (
         <div id={"empwc__core__root"}>
             <FullReactWebChat
-                directLine={directLine}
+                directLine={props.directLine}
             />
         </div>
     )

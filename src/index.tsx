@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 import './styles/main.scss';
-import {AppComponent} from './app/app.component';
+import {EmplayWebChat} from './app/app.component';
 import registerMainServiceWorker from './app/workers/main.service.worker';
 
 registerMainServiceWorker();
@@ -10,7 +10,7 @@ registerMainServiceWorker();
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppComponent />
+    <EmplayWebChat />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -1,31 +1,18 @@
-import React, {useCallback, useEffect, useRef, useState} from 'react';
+import React, {useMemo} from 'react';
 import AppStyles from './app.module.scss';
 import {CoreComponent} from "./components/core/core.component";
+import {EmplayWebChatAPI} from "./apis";
 
-export function AppComponent() {
-    const dlInputRef = useRef<HTMLInputElement | null>(null);
-    const [SECRET, setSecret] = useState("");
+export function EmplayWebChat(props: {API?: EmplayWebChatAPI}) {
 
-    const setupDirectLine = useCallback(() => {
-        const currentDLValue = dlInputRef.current?.value;
-        if (currentDLValue && SECRET !== currentDLValue){
-            setSecret(currentDLValue);
-        }
-    }, [SECRET])
+    const API = useMemo(() => props.API || new EmplayWebChatAPI(
 
-    useEffect(() => {
-        const InitialDLSecret = prompt('Enter DL Secret to Connect:');
-        if (InitialDLSecret){
-            setSecret(InitialDLSecret);
-        }
-    }, []);
+    ), [props.API])
 
     return (
     <div className={AppStyles.App}>
-        <input type="text" ref={dlInputRef} placeholder={"DirectLine Secret"}/>
-        <button onClick={setupDirectLine}>Set DirectLine</button>
         <CoreComponent
-        secret={SECRET}
+            directLine= {API.Middlewares.DirectLineMWR.Connection}
         />
     </div>
     );
