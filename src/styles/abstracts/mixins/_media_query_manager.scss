@@ -1,0 +1,79 @@
+//MEDIA QUERY MANAGER
+/*
+0-600px:       Phone
+600-900px:     Tablet Portrait
+900-1200px:    Tablet Landscape
+1200-1800px:   Desktops and Laptops //this is desktop first (OUR Current STYLES)
+1800px+:       Big Desktops
+
+
+mixin order
+
+@include respond(tab-land){
+  }
+
+  @include respond(tab-port){
+  }
+
+  @include respond(phone){
+  }
+
+  @include respond(big-desktop){
+  }
+
+
+ORDER: BASE + typography > general layout + grid > page layout > components
+
+1em = 16px
+
+breakpoint argument choices
+- small-phone 370px 23.125
+- phone 600px 37.5em
+- tab-port 900px 56.25em
+- tab-land 1200px 75em
+- small-pc 1370px 86em
+- big-desktop 1800px 112.5em
+ */
+@mixin respond($breakpoint){
+  @if $breakpoint == small-phone {
+    @media only screen and (max-width: 23.125em){ @content }
+  }
+
+  @if $breakpoint == small-phone-keys {
+    @media only screen and (max-height: 23.125em) and (max-width: 23.125em) { @content }
+  }
+
+  @if $breakpoint == phone-keys {
+    @media only screen and (max-height: 31.5em) and (max-width: 31.5em) { @content }
+  }
+
+
+  @if $breakpoint == iphone-se {
+    @media only screen and (max-width: 23.5em) and (max-height: 34.7em) { @content }
+  }
+
+  @if $breakpoint == phone-port {
+    @media only screen and (max-width: 37.5em){ @content }
+  }
+  @if $breakpoint == phone-land {
+    @media only screen and (max-height: 30em) and (max-width: 75em) and (orientation: landscape){ @content }
+  }
+  @if $breakpoint == ipad-land {
+    @media only screen and (max-height: 65em) and (max-width: 90em) and (orientation: landscape){ @content }
+  }
+  @if $breakpoint == ipad-port {
+    @media only screen and (max-height: 90em) and (max-width: 65em){ @content }
+  }
+  @if $breakpoint == tab-port {
+    @media  only screen and (max-width: 56.25em){ @content }
+  }
+  @if $breakpoint == tab-land {
+    @media  only screen and (max-width: 75em) and (orientation: landscape){ @content }
+  }
+  @if $breakpoint == small-pc {
+    @media  only screen and (max-width: 86em){ @content }
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em){ @content }
+  }
+}

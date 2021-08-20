@@ -1,0 +1,19 @@
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+@import "base/base";
+
+
+@import "layout/grid";
+
+@import "vendors/bot";
+@import "vendors/loadingio-spinner";
+
+//comment out the rest of the bots and only enable one bot partial at a time
+//@import "bots/asb";
+//@import "bots/bts";
+@import "bots/psa";
+
+.App{
+  color: blue;
+}

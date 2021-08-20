@@ -1,0 +1,63 @@
+.userAuth{
+    &__shelf{
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__template{
+        width: 75%;
+        display: grid;
+        grid-template-rows: min-content 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+        align-items: center;
+        justify-items: center;
+        font-size: 1.6rem;
+    }
+
+    &__head{
+        font-size: 4rem;
+
+        & *{
+            text-align: center;
+        }
+    }
+
+    &__body{
+        background-color: var(--color-gray-light-1);
+        width: 70%;
+        height: 100%;
+        padding: 2rem;
+        display: grid;
+        grid-template-rows: min-content 1fr;
+        grid-template-columns: 1fr;
+        grid-gap: 4rem;
+
+        
+    }
+
+    &__form{
+        &__head{
+            & h3{
+                font-size: 3rem;
+            }
+            font-size: 1.6rem;
+
+        }
+
+        &__action{
+            @include clearfix;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            & > *:last-child:not(:first-child) {
+                margin-left: auto;
+            }
+        }
+    }
+
+}

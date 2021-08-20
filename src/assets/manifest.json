@@ -1,0 +1,22 @@
+{
+  "name": "EmplayWebChat",
+  "short_name": "empwc",
+  "description": "WebChat client for directLine channel of pbotnode.",
+  "start_url": ".",
+  "scope": ".",
+  "icons": [
+    {
+      "src": "images/bot-avatar.min.png",
+      "sizes": "64x64 32x32 24x24 16x16",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "images/bot-avatar.png",
+      "type": "image/png",
+      "sizes": "400x400"
+    }
+  ],
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}
