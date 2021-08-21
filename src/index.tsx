@@ -1,17 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 
 import './styles/main.scss';
-import {EmplayWebChat} from './app/app.component';
-import registerMainServiceWorker from './app/workers/main.service.worker';
+import {EmplayWebChat} from './empwc/empwc.component';
+import registerMainServiceWorker from './empwc/workers/main.service.worker';
 
 registerMainServiceWorker();
 
 
-ReactDOM.render(
-  <React.StrictMode>
-    <EmplayWebChat />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const WebChatElement = new EmplayWebChat();
+
+// WebChatElement.setAttribute('autoBoot', '');
+
+document.body.insertBefore(WebChatElement, document.body.firstChild);
 
