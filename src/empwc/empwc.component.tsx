@@ -75,7 +75,7 @@ customElements.define('emp-wc', EMPWC);
 export function EmplayReactWebChat() {
     return(
         <Fragment>
-            <emplay-webchat autoboot={''}></emplay-webchat>
+            <emplay-webchat autoboot={''}/>
         </Fragment>
     )
 }
