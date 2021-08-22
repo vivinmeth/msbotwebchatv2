@@ -25,3 +25,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+/src/configs/*/
+!/src/configs/base
+!/src/configs/bot

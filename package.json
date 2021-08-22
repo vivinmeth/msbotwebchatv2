@@ -56,6 +56,7 @@
     "mini-css-extract-plugin": "0.11.3",
     "node-sass": "^6.0.1",
     "optimize-css-assets-webpack-plugin": "5.0.4",
+    "ora": "^5.4.1",
     "pnp-webpack-plugin": "1.6.4",
     "postcss-flexbugs-fixes": "4.2.1",
     "postcss-loader": "3.0.0",
@@ -87,11 +88,13 @@
     "botframework-webchat": "^4.14.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "vorpal": "^1.12.0"
   },
   "scripts": {
     "start": "node scripts/start.js",
     "build": "node scripts/build.js",
+    "cli": "node scripts/cli.js",
     "test": "node scripts/test.js"
   },
   "eslintConfig": {

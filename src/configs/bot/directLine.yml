@@ -1,0 +1,8 @@
+# DirectLine Config
+
+SECRET: null
+TOKEN_SERVER_ENDPOINT: 'http://localhost:3979'
+GET_TOKEN_API_SLUG: 'get_token'
+RECONNECT_API_SLUG: 'reconnect'
+USE_WEBSOCKET: true
+DIRECTLINE_SERVER_ENDPOINT: null
