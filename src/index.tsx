@@ -8,11 +8,18 @@ registerMainServiceWorker();
 
 
 if (process.env.NODE_ENV === "development"){
+    const ROOT_ID = 'temp__root';
+    let root = document.getElementById(ROOT_ID);
+    if (!root){
+        root = document.createElement('div');
+        root.id = ROOT_ID;
+        document.body.insertBefore(root, document.body.firstChild);
+    }
     render(
         <React.StrictMode>
             <EmplayReactWebChat />
         </React.StrictMode>,
-        document.getElementById('temp_root')
+        root
     )
 }
 else{
