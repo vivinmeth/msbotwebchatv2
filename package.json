@@ -95,6 +95,7 @@
     "yaml-loader": "^0.6.0"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "botframework-webchat": "^4.14.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
