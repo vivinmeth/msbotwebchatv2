@@ -1,6 +1,6 @@
 {
   "name": "@emplay/webchat",
-  "description": "WebChat client(DirectLine Chanel) for Emplay's pbotnode",
+  "description": "WebChat client(DirectLine Channel) for Emplay's pbotnode",
   "misc": {
     "title": "Emplay WebChat",
     "org": "Emplay .Inc (http://supportai.emplay.net)"

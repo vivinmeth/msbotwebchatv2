@@ -2,7 +2,7 @@
 module.exports = (vorpal, ora) => {
     vorpal
         .command("build", "builds the webchat bundle and package")
-        .option('--bot <botName>')
+        .option('--bot <botName>', "pass specific bot name to build the webchat for.")
         .action((args, cb) => {
             const spinner = ora("Stating build process...").start();
             setTimeout(() => {
