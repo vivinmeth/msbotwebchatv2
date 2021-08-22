@@ -1,9 +1,14 @@
-import {HTMLAttributes} from "react";
+import {HTMLAttributes, RefObject} from "react";
 
-export interface WebChatProps {
+import {EmplayWebChat} from "../empwc.component";
+import {EmplayWebChatCore} from "../components/core/core.component";
 
+
+export interface EmplayWebChatAttributes extends HTMLAttributes<EmplayWebChat>{
+    autoboot?: '';
+    ref?: RefObject<EmplayWebChat>
 }
 
-export interface EmplayWebChatAttributes extends HTMLAttributes<HTMLElement>{
-    autoboot?: '';
+export interface EmplayWebChatCoreAttributes extends HTMLAttributes<EmplayWebChatCore>{
+    ref?: RefObject<EmplayWebChatCore>
 }

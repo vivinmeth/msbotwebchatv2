@@ -1,4 +1,4 @@
-import {EmplayWebChatAttributes} from "./empwc/types";
+import {EmplayWebChatAttributes, EmplayWebChatCoreAttributes} from "./empwc/types";
 
 export * from './empwc/types';
 
@@ -19,6 +19,7 @@ declare global {
         interface IntrinsicElements {
             'emplay-webchat': EmplayWebChatAttributes;
             'emp-wc': EmplayWebChatAttributes;
+            'emplay-webchat-core': EmplayWebChatCOreAttributes
         }
     }
 }
