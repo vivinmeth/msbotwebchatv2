@@ -5,7 +5,7 @@ import {CoreComponent} from "./components/core/core.component";
 import {EmplayWebChatAPI} from "./apis";
 
 // ToDo: this probably must be a class with a functional react component.
-export function EmplayWebChatC(props: {API?: EmplayWebChatAPI}) {
+export function EmplayWebChatComponent(props: {API?: EmplayWebChatAPI}) {
 
     const API = useMemo(() => props.API || new EmplayWebChatAPI(
 
@@ -44,14 +44,14 @@ export class EmplayWebChat extends HTMLElement{
     bootup(){
         render(
             <StrictMode>
-                <EmplayWebChatC />
+                <EmplayWebChatComponent />
             </StrictMode>,
             this
         )
     }
 }
 
-class EmpWc extends EmplayWebChat{
+export class EMPWC extends EmplayWebChat{
     constructor() {
         super();
         console.log('New EmplayWebChat as EmpWc created!');
@@ -59,4 +59,4 @@ class EmpWc extends EmplayWebChat{
 }
 
 customElements.define('emplay-webchat', EmplayWebChat);
-customElements.define('emp-wc', EmpWc);
+customElements.define('emp-wc', EMPWC);

@@ -1,6 +1,7 @@
 {
-  "name": "empwc",
+  "name": "@emplay/webchat",
   "version": "0.0.1",
+  "license": "UNLICENSED",
   "private": true,
   "devDependencies": {
     "@babel/core": "7.12.3",
