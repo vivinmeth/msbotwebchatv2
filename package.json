@@ -31,6 +31,7 @@
     "@types/node": "^12.20.19",
     "@types/react": "^17.0.18",
     "@types/react-dom": "^17.0.9",
+    "@types/react-redux": "^7.1.18",
     "@types/uuid": "^8.3.1",
     "@typescript-eslint/eslint-plugin": "^4.5.0",
     "@typescript-eslint/parser": "^4.5.0",
@@ -101,6 +102,8 @@
     "botframework-webchat": "^4.14.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-redux": "^7.2.4",
+    "redux": "^4.1.1",
     "uuid": "^8.3.2",
     "vorpal": "^1.12.0"
   },
