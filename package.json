@@ -1,6 +1,7 @@
 {
   "name": "@emplay/webchat",
   "description": "WebChat client(DirectLine Channel) for Emplay's pbotnode",
+  "type": "module",
   "misc": {
     "title": "Emplay WebChat",
     "org": "Emplay .Inc (http://supportai.emplay.net)"
@@ -14,6 +15,8 @@
     "empwc": "cli"
   },
   "devDependencies": {
+    "@azure/identity": "^1.5.1",
+    "@azure/storage-blob": "^12.7.0",
     "@babel/core": "7.12.3",
     "@babel/plugin-proposal-private-methods": "^7.14.5",
     "@pmmmwh/react-refresh-webpack-plugin": "0.4.3",
