@@ -3,11 +3,11 @@ import React, {useContext, useMemo} from "react";
 import {render, unmountComponentAtNode} from "react-dom";
 import {FullReactWebChatProps} from "botframework-webchat/lib/FullReactWebChat";
 
-function EmplayWebChatCoreRC(props: FullReactWebChatProps) {
+function EmplayWebChatCoreRC(props: FullReactWebChatProps & {notstandalone?: ''}) {
     const empwc_core = useMemo(() => new EmplayWebChatCore(), []);
 
     return (
-        <emplay-webchat-core host={'react'} disableautorender={''}>
+        <emplay-webchat-core host={'react'} disableautorender={''} notstandalone={props.notstandalone}>
             <empwc_core.Component
                 {...props}
             />
@@ -59,6 +59,7 @@ function EmplayWebChatCoreComponent(props: FullReactWebChatProps) {
 export class EmplayWebChatCore extends HTMLElement{
     #Host?: string | null;
     #DisableAutoRender?: boolean;
+    #NotStandAlone?: boolean;
 
     #props?: FullReactWebChatProps;
 
@@ -71,6 +72,7 @@ export class EmplayWebChatCore extends HTMLElement{
         this.classList.add('empwc__core');
         this.#Host = this.getAttribute('host');
         this.#DisableAutoRender = this.hasAttribute('disableautorender');
+        this.#NotStandAlone = this.hasAttribute('notstandalone');
         if (this.#Host !== 'react' && !this.#DisableAutoRender){
             this.#render();
         }

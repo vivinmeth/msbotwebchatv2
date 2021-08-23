@@ -1,3 +1,5 @@
+import {EmplayWebChatAttributes, EmplayWebChatCoreAttributes} from "./empwc/types";
+
 export * from './empwc/types';
 
 
@@ -13,16 +15,12 @@ declare module '*.yaml' {
     export default data
 }
 
-/** adding custom elements in react typescript context
-
-*/
-
+/* adding custom elements in react typescript context */
 declare global {
     namespace JSX {
         interface IntrinsicElements {
-            // 'emplay-webchat': EmplayWebChatAttributes;
-            // 'emp-wc': EmplayWebChatAttributes;
-            'emplay-webchat-core': EmplayWebChatCOreAttributes;
+            'emplay-webchat': EmplayWebChatAttributes;
+            'emplay-webchat-core': EmplayWebChatCoreAttributes;
         }
     }
 }

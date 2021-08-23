@@ -1,4 +1,22 @@
-import {render} from "react-dom";
-import React, {StrictMode, Fragment, useContext, useEffect, useRef, useState, useMemo} from 'react';
+import React from 'react';
+import {EmplayWebchatAPI} from "./apis";
 
-export const n = null;
+
+
+export class EmplayWebChat extends EmplayWebchatAPI{
+
+    constructor() {
+        super();
+    }
+
+    connectedCallback(){
+        console.log('I got injected', this);
+    }
+
+    bootup(){
+        console.log('booting up...', this);
+        return this;
+    }
+}
+
+customElements.define('emplay-webchat', EmplayWebChat);

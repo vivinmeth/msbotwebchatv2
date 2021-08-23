@@ -3,6 +3,7 @@
 const path = require('path');
 const fs = require('fs');
 const getPublicUrlOrPath = require('react-dev-utils/getPublicUrlOrPath');
+const PackageJson = require('../package.json');
 
 // Make sure any symlinks in the project folder are resolved:
 // https://github.com/facebook/create-react-app/issues/637
@@ -21,7 +22,9 @@ const publicUrlOrPath = getPublicUrlOrPath(
   process.env.PUBLIC_URL
 );
 
-const buildPath = process.env.BUILD_PATH || 'build';
+const libTarget = process.env.LIB_TARGET;
+const buildPath = process.env.BUILD_PATH || libTarget === 'umd' ? PackageJson.main: libTarget === 'module' ? PackageJson.module : PackageJson.browser;
+console.log(process.env.LIB_TARGET, buildPath);
 
 const moduleFileExtensions = [
   'web.mjs',

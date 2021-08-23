@@ -1,6 +1,9 @@
 {
   "name": "@emplay/webchat",
   "description": "WebChat client(DirectLine Channel) for Emplay's pbotnode",
+  "main": "dist/lib/umd",
+  "module": "dist/lib/esm",
+  "browser": "dist/browser",
   "misc": {
     "title": "Emplay WebChat",
     "org": "Emplay .Inc (http://supportai.emplay.net)"
@@ -44,6 +47,7 @@
     "bfj": "^7.0.2",
     "camelcase": "^6.1.0",
     "case-sensitive-paths-webpack-plugin": "2.3.0",
+    "copyfiles": "^2.4.1",
     "css-loader": "4.3.0",
     "dotenv": "8.2.0",
     "dotenv-expand": "5.1.0",
@@ -82,6 +86,7 @@
     "react-refresh": "^0.8.3",
     "resolve": "1.18.1",
     "resolve-url-loader": "^3.1.2",
+    "rimraf": "^3.0.2",
     "sass-loader": "^10.0.5",
     "scoped-css-loader": "^1.0.0",
     "semver": "7.3.2",
@@ -109,7 +114,13 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "clean:dist": "rimraf dist",
+    "copy:lib": "copyfiles -u 1 src/**/*.html src/**/*.css src/**/*.scss src/assets src/**/*.yaml src/**/*/yml dist/lib/esm && copyfiles -u 1 src/**/*.html src/**/*.css src/**/*.scss src/assets src/**/*.yaml src/**/*/yml dist/lib/cjs",
+    "build:lib": "rimraf dist/lib && tsc --build tsconfig.json && tsc --build tsconfig-esm.json && yarn copy:lib",
+    "build:lib-umd": "rimmraf dist/lib-bundle && export LIB_TARGET='umd'; node scripts/build.js && unset LIB_TARGET;unset BUILD_PATH;",
+    "build:lib-esm": "rimmraf dist/lib-bundle && export LIB_TARGET='module'; node scripts/build.js && unset LIB_TARGET;unset BUILD_PATH;",
+    "build:browser": "node scripts/build.js",
+    "build": "yarn clean:dist && yarn build:lib && yarn build:browser",
     "cli": "node cli",
     "test": "node scripts/test.js"
   },

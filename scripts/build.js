@@ -15,6 +15,7 @@ process.on('unhandledRejection', err => {
 require('../build-setup/env');
 
 
+
 const path = require('path');
 const chalk = require('react-dev-utils/chalk');
 const fs = require('fs-extra');
@@ -48,7 +49,7 @@ const argv = process.argv.slice(2);
 const writeStatsJson = argv.indexOf('--stats') !== -1;
 
 // Generate configuration
-const config = configFactory('production');
+const config = configFactory('production', process.env.LIB_TARGET);
 
 // We require that you explicitly set browsers and do not fall back to
 // browserslist defaults.
